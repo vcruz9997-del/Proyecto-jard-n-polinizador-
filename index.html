@@ -1,132 +1,507 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Proyecto Jardin Polinizador con bugambilias, lantanas, plantas y polinizadores: preparación del terreno, plantación, aprendizajes y cuidados.">
-<title>Nuestro proyecto de plantas | Bugambilias y Lantanas</title>
-<style>
-:root{--morado:#5b2a86;--morado2:#7b42a5;--rojo:#c9344d;--naranja:#f29b38;--crema:#fff9f1;--verde:#477b58;--tinta:#30263a;--suave:#f2e9f8;--borde:#e5d8ed}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--tinta);background:var(--crema);line-height:1.65}button,a{font:inherit}button{cursor:pointer}.hero{background:radial-gradient(circle at 85% 15%,#f8b65a55 0 8%,transparent 8.5%),linear-gradient(135deg,#49206f,#713c97 65%,#923d75);color:white;padding:clamp(2rem,6vw,5rem) 1.2rem 3rem;position:relative;overflow:hidden}.hero:after{content:"✿  ❋  ✦";position:absolute;right:3%;bottom:5%;font-size:clamp(2rem,7vw,5rem);color:#ffffff24;letter-spacing:.3em;pointer-events:none}.hero-inner{max-width:1100px;margin:auto;position:relative;z-index:1}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-weight:800;color:#ffd08b;font-size:.8rem}.hero h1{font-size:clamp(2rem,5vw,4rem);line-height:1.12;max-width:850px;margin:.6rem 0 1rem}.hero p{font-size:clamp(1rem,2vw,1.2rem);max-width:780px;color:#f7efff}.hero-badge{display:inline-block;margin-top:1rem;padding:.45rem .8rem;border:1px solid #ffffff65;border-radius:999px;font-size:.9rem}.wrap{width:min(1100px,92%);margin:auto}.intro{padding:2rem 0 1rem}.intro-card{background:white;border:1px solid var(--borde);border-left:6px solid var(--naranja);border-radius:18px;padding:1.3rem 1.5rem;box-shadow:0 8px 25px #3e1a5010}.intro-card p{margin:.2rem 0}.section-title{color:var(--morado);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.2;margin:2.5rem 0 .7rem}.muted{color:#665b6e}.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.3rem 0 2.4rem}.menu-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;background:white;border:1px solid var(--borde);border-radius:20px;padding:1.25rem;min-height:230px;box-shadow:0 7px 22px #45215b0b;transition:transform .2s,box-shadow .2s}.menu-card:hover,.menu-card:focus-visible{transform:translateY(-4px);box-shadow:0 12px 28px #45215b1c;outline:3px solid #f29b3866}.menu-icon{width:58px;height:58px;display:grid;place-items:center;background:var(--suave);border-radius:17px;font-size:1.9rem;margin-bottom:.8rem}.menu-card strong{font-size:1.18rem;color:var(--rojo);line-height:1.3}.menu-card span:last-child{margin-top:.55rem;color:#625669;font-size:.94rem}.menu-arrow{margin-top:auto;padding-top:.8rem;color:var(--morado);font-weight:800}.view{display:none;padding:1.2rem 0 3.5rem;animation:appear .25s ease}.view.active{display:block}@keyframes appear{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}.view-head{background:var(--suave);padding:1.5rem;border-radius:20px;margin:1rem 0 1.5rem;border-bottom:4px solid var(--naranja)}.view-head h2{margin:0;color:var(--morado);font-size:clamp(1.6rem,4vw,2.4rem)}.back{border:0;border-radius:999px;background:var(--rojo);color:white;padding:.75rem 1.1rem;font-weight:800;box-shadow:0 4px 0 #8d2033;margin-bottom:.5rem}.back:hover{background:#a9273e}.content-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.panel{background:white;border:1px solid var(--borde);border-radius:18px;padding:1.2rem;box-shadow:0 5px 18px #45215b08}.panel h3{color:var(--morado);margin:.2rem 0 .5rem}.steps{padding-left:1.25rem}.steps li{padding:.25rem 0}.note{background:#fff0d9;border-radius:12px;padding:.9rem 1rem;border-left:4px solid var(--naranja)}.photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0 1.5rem}.photo-card{overflow:hidden;border:1px solid var(--borde);border-radius:16px;background:white}.photo-placeholder{aspect-ratio:4/3;display:grid;place-items:center;text-align:center;padding:1rem;background:linear-gradient(145deg,#f2e9f8,#fff0d9);color:var(--morado);border-bottom:1px dashed #c9afd8}.photo-placeholder .camera{font-size:2rem;display:block}.photo-placeholder small{display:block;color:#71617b}.photo-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.photo-card figcaption{padding:.9rem 1rem}.photo-card figcaption strong{display:block;color:var(--rojo);margin-bottom:.25rem}.photo-card p{font-size:.93rem;margin:.2rem 0}.upload-row{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center;background:#fff;border:1px dashed #b69ac8;border-radius:14px;padding:1rem;margin:1rem 0}.upload-row input{max-width:100%;color:var(--tinta)}.upload-row label{font-weight:800;color:var(--morado)}.plant-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}.plant-card{background:white;border:1px solid var(--borde);border-radius:20px;overflow:hidden}.plant-card img{width:100%;height:240px;object-fit:cover;background:#f2e9f8;display:block}.plant-card-body{padding:1.2rem}.plant-card h3{color:var(--rojo);font-size:1.5rem;margin:0}.tag{display:inline-block;background:#fbe7e9;color:#97243a;border-radius:999px;padding:.2rem .65rem;font-size:.82rem;font-weight:750;margin:.45rem .2rem .2rem 0}.plant-card ul{padding-left:1.2rem}.pollinator-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.pollinator{padding:1rem;background:white;border:1px solid var(--borde);border-radius:16px}.pollinator .emoji{font-size:2rem}.pollinator h3{margin:.2rem 0;color:var(--morado)}.media-panel{margin:1.2rem 0;background:white;border:1px solid var(--borde);border-radius:18px;padding:1.2rem}.media-panel h3{margin:.2rem 0;color:var(--morado)}.media-panel video,.media-panel audio{display:block;width:100%;margin:.8rem 0}.video-placeholder{display:grid;place-items:center;min-height:210px;border-radius:14px;background:linear-gradient(135deg,#4b216f,#9a4b87);color:white;text-align:center;padding:1.2rem}.video-placeholder span{font-size:3rem}.file-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.file-card{display:flex;gap:1rem;align-items:center;background:white;border:1px solid var(--borde);border-radius:16px;padding:1.1rem}.file-icon{font-size:2rem;background:#fff0d9;padding:.7rem;border-radius:12px}.file-card h4{margin:0;color:var(--morado)}.download-link{display:inline-block;margin-top:.4rem;color:var(--rojo);font-weight:800;text-underline-offset:3px}.resource-note{font-size:.9rem;color:#685b70}.footer{background:#321846;color:#f6eafa;padding:2rem 1rem;text-align:center}.footer p{margin:.3rem}.footer a{color:#ffd08b}.hidden{display:none!important}.small-label{font-size:.86rem;color:#71617b}.plant-card img[src=""],.photo-card img[src=""]{display:none}
-@media(max-width:760px){.menu-grid{grid-template-columns:1fr}.menu-card{min-height:0;display:grid;grid-template-columns:58px 1fr;column-gap:1rem;align-items:center}.menu-icon{grid-row:span 3;margin:0}.menu-card span:last-child{margin-top:.3rem}.menu-arrow{padding-top:.35rem}.photo-grid,.pollinator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.content-grid,.plant-grid,.file-grid{grid-template-columns:1fr}.hero:after{right:-1%;bottom:0}}@media(max-width:480px){.photo-grid,.pollinator-grid{grid-template-columns:1fr}.photo-placeholder{aspect-ratio:16/9}.hero{padding-bottom:2.5rem}.intro-card,.panel,.view-head{padding:1rem}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce los jardines polinizadores, las plantas que atraen polinizadores y cómo crear espacios para cuidar la biodiversidad.">
+  <title>Jardines Polinizadores</title>
+
+  <style>
+    :root {
+      --rojo: #8B174D;
+      --morado: #6D28A8;
+      --rosa: #D94670;
+      --lila: #F1E6FA;
+      --blanco: #FFFFFF;
+      --texto: #35213A;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #FFF9FC;
+      color: var(--texto);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(120deg, var(--rojo), var(--morado));
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #FFD6E7;
+    }
+
+    .portada {
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 75px 8%;
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(92, 12, 63, .88),
+        rgba(83, 27, 139, .83)),
+        url("jar2/1.jpg") center/cover;
+    }
+
+    .portada h1 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .portada p {
+      font-size: 1.15rem;
+      max-width: 760px;
+      margin: 0 auto 25px;
+    }
+
+    .boton {
+      display: inline-block;
+      background: var(--rosa);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 8px;
+      transition: transform .2s, background .2s;
+    }
+
+    .boton:hover {
+      background: var(--rojo);
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 65px 7%;
+      scroll-margin-top: 20px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--rojo);
+      margin-bottom: 15px;
+    }
+
+    .introduccion {
+      max-width: 850px;
+      margin: 0 auto 35px;
+      text-align: center;
+    }
+
+    .fondo-lila {
+      background: var(--lila);
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .tarjeta {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(70, 25, 80, .12);
+      transition: transform .2s;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-5px);
+    }
+
+    .tarjeta img {
+      display: block;
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      background: var(--lila);
+    }
+
+    .contenido-tarjeta {
+      padding: 20px;
+    }
+
+    .contenido-tarjeta h3 {
+      color: var(--morado);
+      margin-bottom: 9px;
+    }
+
+    .numero {
+      color: var(--rosa);
+      font-weight: bold;
+    }
+
+    .recursos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .recurso {
+      background: white;
+      border: 2px solid #E6D0F4;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .recurso .icono {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    .recurso h3 {
+      color: var(--morado);
+      margin-bottom: 10px;
+    }
+
+    audio,
+    video {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .video-contenedor {
+      max-width: 850px;
+      margin: 30px auto 0;
+      background: white;
+      padding: 15px;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(70, 25, 80, .12);
+    }
+
+    .video-contenedor video {
+      display: block;
+      max-height: 480px;
+      border-radius: 10px;
+      background: #21152A;
+    }
+
+    .descarga {
+      display: inline-block;
+      color: var(--morado);
+      font-weight: bold;
+      margin-top: 12px;
+      text-decoration: none;
+    }
+
+    .descarga:hover {
+      color: var(--rojo);
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #391332;
+      color: white;
+      text-align: center;
+      padding: 30px 7%;
+    }
+
+    footer p + p {
+      margin-top: 5px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      section {
+        padding: 45px 5%;
+      }
+
+      .portada {
+        min-height: 380px;
+        padding: 55px 6%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header class="hero">
- <div class="hero-inner">
-  <div class="eyebrow">🌱 Proyecto escolar · Naturaleza y aprendizaje</div>
-  <h1>Nuestro proyecto de plantas: Bugambilias y Lantanas</h1>
-  <p>Un espacio para compartir cómo preparamos el terreno, plantamos nuestras flores y aprendemos a cuidar las plantas y a los pequeños polinizadores que visitan sus flores.</p>
-  <span class="hero-badge">🌺 Aprender · Plantar · Cuidar</span>
- </div>
-</header>
-<main class="wrap">
- <section id="home">
-  <div class="intro"><div class="intro-card"><p><strong>¡Bienvenidos a nuestro proyecto!</strong> Aquí podrás conocer cómo preparamos el terreno, cómo plantamos nuestras flores y qué aprendimos sobre las bugambilias y las lantanas, así como los cuidados que necesitan para crecer sanas y bonitas.</p></div></div>
-  <h2 class="section-title">Explora nuestro proyecto</h2>
-  <p class="muted">Elige un apartado para ver su contenido. Puedes regresar a este menú cuando quieras.</p>
-  <div class="menu-grid">
-   <button class="menu-card" data-view="terreno"><span class="menu-icon">🪴</span><strong>Preparación del terreno</strong><span>El comienzo: limpiar, revisar y preparar el espacio.</span><span class="menu-arrow">Ver apartado →</span></button>
-   <button class="menu-card" data-view="plantacion"><span class="menu-icon">🌱</span><strong>Plantación</strong><span>Las fotografías y los pasos para plantar nuestras flores.</span><span class="menu-arrow">Ver apartado →</span></button>
-   <button class="menu-card" data-view="aprendizajes"><span class="menu-icon">🦋</span><strong>Aprendizajes y cuidados</strong><span>Conoce las plantas, sus cuidados y los polinizadores.</span><span class="menu-arrow">Ver apartado →</span></button>
-  </div>
-  <div class="note"><strong>¿Qué encontrarás?</strong> Fotografías del proyecto que ustedes agreguen, descripciones editables, información sobre plantas y polinizadores, un espacio para video, una grabación o podcast y dos recursos descargables.</div>
- </section>
 
- <section class="view" id="view-terreno" aria-labelledby="title-terreno">
-  <button class="back" data-home>← Regresar al menú principal</button>
-  <div class="view-head"><h2 id="title-terreno">🪴 Preparación del terreno</h2><p>Antes de plantar, preparamos el lugar para que las raíces tengan espacio y las plantas puedan desarrollarse.</p></div>
-  <div class="content-grid">
-   <article class="panel"><h3>¿Cómo preparamos el espacio?</h3><ol class="steps"><li>Observamos el sitio y elegimos una zona que reciba suficiente luz solar.</li><li>Retiramos basura, piedras grandes y hierbas que estorbaban, procurando conservar los organismos útiles.</li><li>Aflojamos la tierra y revisamos que el agua pueda drenar sin quedarse estancada.</li><li>Organizamos el espacio para colocar las plantas dejando sitio para crecer y facilitar el riego.</li></ol><p class="small-label">Edita este texto para que refleje exactamente lo que hizo tu equipo.</p></article>
-   <article class="panel"><h3>¿Por qué es importante?</h3><p>Un terreno limpio y bien preparado ayuda a que las raíces se establezcan. Un buen drenaje reduce el riesgo de que permanezcan demasiado húmedas. También conviene observar las horas de sol y tener cerca agua para el cuidado inicial.</p><div class="note">🌞 La preparación adecuada depende del suelo, el clima y las condiciones reales del lugar.</div></article>
-  </div>
-  <h3 class="section-title">Galería: nuestro terreno</h3><p class="muted">Añade varias fotos. Cada imagen tiene un título y una descripción que puedes escribir aquí o editar directamente en el código.</p>
-  <div class="upload-row"><label for="upload-terreno">Agregar fotografías del terreno</label><input id="upload-terreno" type="file" accept="image/*" multiple data-upload="terreno" aria-label="Seleccionar varias fotografías del terreno"></div>
-  <div class="photo-grid" id="gallery-terreno">
-   <figure class="photo-card"><div class="photo-placeholder"><div><span class="camera">📷</span><strong>Espacio para foto 1</strong><small>Selecciona fotos arriba para reemplazar este espacio</small></div></div><figcaption><strong contenteditable="true">Así encontramos el terreno</strong><p contenteditable="true">Escribe aquí una descripción de la fotografía: cómo estaba el lugar antes de comenzar.</p></figcaption></figure>
-   <figure class="photo-card"><div class="photo-placeholder"><div><span class="camera">📷</span><strong>Espacio para foto 2</strong><small>Tu fotografía del proceso</small></div></div><figcaption><strong contenteditable="true">Limpieza del espacio</strong><p contenteditable="true">Describe qué retiraron y cómo organizaron el área de trabajo.</p></figcaption></figure>
-   <figure class="photo-card"><div class="photo-placeholder"><div><span class="camera">📷</span><strong>Espacio para foto 3</strong><small>Tu fotografía del proceso</small></div></div><figcaption><strong contenteditable="true">La tierra lista para plantar</strong><p contenteditable="true">Explica cómo quedó el terreno al terminar la preparación.</p></figcaption></figure>
-  </div>
- </section>
+  <header>
+    <div class="logo">🌺 Jardines Polinizadores</div>
 
- <section class="view" id="view-plantacion" aria-labelledby="title-plantacion">
-  <button class="back" data-home>← Regresar al menú principal</button>
-  <div class="view-head"><h2 id="title-plantacion">🌱 Plantación de nuestras flores</h2><p>Documentamos cómo colocamos las bugambilias y las lantanas en su nuevo espacio y cómo comenzamos a cuidarlas.</p></div>
-  <div class="content-grid">
-   <article class="panel"><h3>Pasos para plantar</h3><ol class="steps"><li>Regamos ligeramente la planta en su recipiente si la tierra estaba muy seca.</li><li>Abrimos un hoyo adecuado para el tamaño del cepellón.</li><li>Retiramos con cuidado el recipiente, colocamos la planta y cubrimos las raíces con tierra sin enterrar el tallo más de lo necesario.</li><li>Presionamos suavemente alrededor y regamos para asentar la tierra, evitando encharcamientos.</li><li>Observamos las plantas durante las siguientes semanas y ajustamos el riego según el clima y la humedad del suelo.</li></ol></article>
-   <article class="panel"><h3>¿Qué aprendimos al plantar?</h3><p>Las plantas necesitan espacio, luz, agua en la cantidad adecuada y tiempo para adaptarse. Conviene manipular las raíces con cuidado, identificar cada especie y observar cambios en hojas, tallos y flores.</p><div class="note">💧 Antes de volver a regar, revisa la humedad de la tierra. El riego frecuente sin necesidad puede perjudicar las raíces.</div></article>
-  </div>
-  <h3 class="section-title">Galería: manos a la tierra</h3><p class="muted">Carga fotos de cada etapa y personaliza el título y el pie de foto para explicar lo que ocurrió.</p>
-  <div class="upload-row"><label for="upload-plantacion">Agregar fotografías de la plantación</label><input id="upload-plantacion" type="file" accept="image/*" multiple data-upload="plantacion" aria-label="Seleccionar varias fotografías de la plantación"></div>
-  <div class="photo-grid" id="gallery-plantacion">
-   <figure class="photo-card"><div class="photo-placeholder"><div><span class="camera">📷</span><strong>Espacio para foto 1</strong><small>Tu foto de la plantación</small></div></div><figcaption><strong contenteditable="true">Preparamos los hoyos</strong><p contenteditable="true">Describe cómo prepararon el sitio donde colocaron las plantas.</p></figcaption></figure>
-   <figure class="photo-card"><div class="photo-placeholder"><div><span class="camera">📷</span><strong>Espacio para foto 2</strong><small>Tu foto de la plantación</small></div></div><figcaption><strong contenteditable="true">Plantamos las flores</strong><p contenteditable="true">Cuenta cómo colocaron las bugambilias o las lantanas en la tierra.</p></figcaption></figure>
-   <figure class="photo-card"><div class="photo-placeholder"><div><span class="camera">📷</span><strong>Espacio para foto 3</strong><small>Tu foto de la plantación</small></div></div><figcaption><strong contenteditable="true">Primeros cuidados</strong><p contenteditable="true">Describe el primer riego u otra actividad de cuidado que realizaron.</p></figcaption></figure>
-  </div>
- </section>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#plantas">Plantas</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#video">Video</a>
+      <a href="#recursos">Archivos</a>
+    </nav>
+  </header>
 
- <section class="view" id="view-aprendizajes" aria-labelledby="title-aprendizajes">
-  <button class="back" data-home>← Regresar al menú principal</button>
-  <div class="view-head"><h2 id="title-aprendizajes">🦋 Aprendizajes y cuidados</h2><p>Las plantas no solo embellecen el espacio: también forman parte de los ecosistemas y pueden ofrecer alimento a distintos polinizadores.</p></div>
-  <h3 class="section-title">Conozcamos nuestras plantas</h3>
-  <div class="plant-grid">
-   <article class="plant-card"><img src="https://images.unsplash.com/photo-1597055181300-a8b4be9e6b20?auto=format&fit=crop&w=1000&q=85" alt="Flores de bugambilia de color intenso" loading="lazy" onerror="this.style.display='none'"><div class="plant-card-body"><h3>Bugambilia</h3><span class="tag">🌞 Amante del sol</span><span class="tag">🌸 Ornamental</span><p>La bugambilia (<em>Bougainvillea</em>) es una planta ornamental trepadora o arbustiva, conocida por sus brácteas de colores vivos —a menudo confundidas con pétalos— que rodean sus pequeñas flores verdaderas.</p><h4>Cuidados básicos</h4><ul><li><strong>Luz:</strong> necesita varias horas de sol directo para crecer y florecer bien.</li><li><strong>Suelo:</strong> prefiere un sustrato con buen drenaje.</li><li><strong>Riego:</strong> moderado; deja que la capa superior del suelo se seque entre riegos y evita el encharcamiento.</li><li><strong>Mantenimiento:</strong> poda con cuidado cuando sea necesario y utiliza guantes, pues algunas variedades tienen espinas.</li></ul><p><strong>¿Qué observar?</strong> La cantidad de luz, el crecimiento de los tallos y la aparición de brácteas coloridas.</p></div></article>
-   <article class="plant-card"><img src="https://images.unsplash.com/photo-1597848212624-e6cf16b7e4b7?auto=format&fit=crop&w=1000&q=85" alt="Flores agrupadas en pequeños ramilletes" loading="lazy" onerror="this.style.display='none'"><div class="plant-card-body"><h3>Lantana</h3><span class="tag">🌼 Flores en ramillete</span><span class="tag">🐝 Visitas de polinizadores</span><p>La lantana (<em>Lantana camara</em> y especies relacionadas) produce grupos redondeados de flores pequeñas que pueden combinar varios colores. En condiciones adecuadas, sus flores pueden atraer mariposas, abejas y otros visitantes florales.</p><h4>Cuidados básicos</h4><ul><li><strong>Luz:</strong> crece mejor en un lugar soleado.</li><li><strong>Suelo:</strong> necesita buen drenaje y no tolera bien el exceso continuo de agua.</li><li><strong>Riego:</strong> moderado; las plantas recién establecidas requieren vigilancia más frecuente que las ya adaptadas.</li><li><strong>Mantenimiento:</strong> retira partes secas si hace falta y observa señales de plagas o estrés.</li></ul><p><strong>Precaución:</strong> algunas lantanas pueden ser tóxicas si se ingieren, especialmente sus frutos. Evita que niños y mascotas las coman.</p></div></article>
-  </div>
-  <h3 class="section-title">¿Qué son los polinizadores?</h3>
-  <div class="panel"><p>Los polinizadores son animales que trasladan polen de una flor a otra. Ese movimiento puede permitir la fecundación de las plantas y la formación de semillas y frutos. Entre los polinizadores se encuentran muchos insectos y también algunos animales como aves y murciélagos, según la región y las especies de plantas.</p><p>Al visitar una flor en busca de néctar o polen, un animal puede llevar granos de polen adheridos a su cuerpo. Cuando llegan a una flor compatible, ayudan a que ocurra la polinización. No todos los visitantes florales son polinizadores eficaces, pero muchos cumplen una función importante en los ecosistemas.</p></div>
-  <div class="pollinator-grid" style="margin-top:1rem">
-   <article class="pollinator"><div class="emoji">🐝</div><h3>Abejas</h3><p>Visitan flores para recoger néctar y polen. El polen puede adherirse a su cuerpo y pasar a otras flores. Evita molestarlas y no uses insecticidas de forma indiscriminada.</p></article>
-   <article class="pollinator"><div class="emoji">🦋</div><h3>Mariposas</h3><p>Muchas se alimentan de néctar con su espiritrompa. Las flores agrupadas y los espacios soleados pueden facilitar sus visitas. Sus orugas también necesitan plantas hospederas adecuadas.</p></article>
-   <article class="pollinator"><div class="emoji">🪰</div><h3>Moscas y otros insectos</h3><p>Algunas moscas, escarabajos y otros insectos también visitan flores y transportan polen. La diversidad de plantas ayuda a ofrecer recursos a diferentes visitantes.</p></article>
-  </div>
-  <h3 class="section-title">Cómo ayudar a los polinizadores</h3>
-  <div class="content-grid">
-   <article class="panel"><h3>Acciones sencillas</h3><ul class="steps"><li>Planta varias especies que florezcan en diferentes épocas del año.</li><li>Evita aplicar pesticidas innecesarios y sigue siempre las indicaciones de seguridad de cualquier producto.</li><li>Deja zonas tranquilas y seguras para los insectos, sin destruir sus refugios.</li><li>Si colocas un recipiente con agua, que sea poco profundo y tenga piedras donde los insectos puedan posarse.</li><li>Observa sin capturar ni lastimar a los animales y registra qué flores visitan.</li></ul></article>
-   <article class="panel"><h3>Observar también es aprender</h3><p>Durante el proyecto podemos registrar la fecha, el clima, la planta visitada, el tipo de visitante y cuánto tiempo permanece en la flor. Una fotografía tomada sin molestar al animal puede ayudar a comparar observaciones a lo largo del tiempo.</p><p class="note">Importante: no todas las plantas atraen a los mismos polinizadores, y la presencia de visitantes depende de la temporada, la hora, el clima y las especies locales.</p></article>
-  </div>
-  <h3 class="section-title">Galería de plantas y polinizadores</h3><p class="muted">Usa esta galería para documentar tus propias observaciones. Escribe una descripción específica debajo de cada fotografía.</p>
-  <div class="upload-row"><label for="upload-polinizadores">Agregar fotos de plantas o polinizadores</label><input id="upload-polinizadores" type="file" accept="image/*" multiple data-upload="polinizadores" aria-label="Seleccionar fotografías de plantas o polinizadores"></div>
-  <div class="photo-grid" id="gallery-polinizadores">
-   <figure class="photo-card"><div class="photo-placeholder"><div><span class="camera">📷</span><strong>Espacio para foto 1</strong><small>Tu foto de una planta o flor</small></div></div><figcaption><strong contenteditable="true">Nombre de la planta</strong><p contenteditable="true">Escribe la especie si la conoces, dónde se tomó la foto y qué detalle quieres destacar.</p></figcaption></figure>
-   <figure class="photo-card"><div class="photo-placeholder"><div><span class="camera">📷</span><strong>Espacio para foto 2</strong><small>Tu foto de un polinizador</small></div></div><figcaption><strong contenteditable="true">Visitante de la flor</strong><p contenteditable="true">Describe el animal, la flor que visitó y qué observaste, sin afirmar una identificación si no estás seguro.</p></figcaption></figure>
-   <figure class="photo-card"><div class="photo-placeholder"><div><span class="camera">📷</span><strong>Espacio para foto 3</strong><small>Tu foto de una observación</small></div></div><figcaption><strong contenteditable="true">Lo que aprendimos</strong><p contenteditable="true">Anota la fecha, el lugar y el aprendizaje que deja esta fotografía.</p></figcaption></figure>
-  </div>
-  <h3 class="section-title">Video del proyecto</h3>
-  <div class="media-panel"><h3>🎬 Nuestro video: plantas y polinizadores</h3><p>Coloca aquí el video en el que explicarás el proyecto. Para un video guardado como archivo, cambia <code>videos/mi-video.mp4</code> por la ruta de tu archivo. Para un video de YouTube, puedes reemplazar el bloque por un <code>iframe</code> con el código de inserción que ofrece YouTube.</p><div class="video-placeholder" id="video-placeholder"><div><span>▶</span><p><strong>Espacio reservado para tu video</strong><br>Tu explicación del proyecto irá aquí.</p></div></div><video controls preload="metadata" class="hidden" id="project-video"><source src="videos/mi-video.mp4" type="video/mp4">Tu navegador no puede reproducir este video.</video><p class="resource-note">Sugerencia: graba en un lugar iluminado, habla con claridad, presenta el objetivo al inicio y termina con una conclusión breve.</p></div>
-  <h3 class="section-title">Podcast o grabación de audio</h3>
-  <div class="media-panel"><h3>🎧 Escucha nuestra explicación</h3><p>Agrega una grabación propia con una introducción, el desarrollo de los temas y un cierre. Se recomienda hablar a un ritmo tranquilo, grabar en un lugar silencioso y comprobar el volumen antes de publicar.</p><audio controls preload="metadata"><source src="audio/mi-podcast.mp3" type="audio/mpeg"><source src="audio/mi-podcast.ogg" type="audio/ogg">Tu navegador no puede reproducir audio. Actualiza la ruta del archivo de audio en el código.</audio><p class="resource-note">Para usar tu archivo, guarda el audio como <code>audio/mi-podcast.mp3</code> junto a la carpeta de la página, o cambia la ruta del elemento <code>source</code> en el código.</p></div>
-  <h3 class="section-title">Materiales útiles para descargar</h3>
-  <p>Incluimos dos archivos iniciales de apoyo creados para este proyecto. Puedes descargarlos y reemplazarlos por tus versiones finales de la guía y el folleto cuando estén listos.</p>
-  <div class="file-grid">
-   <article class="file-card"><div class="file-icon">📗</div><div><h4>Guía básica de plantas</h4><p class="resource-note">Cuidados, riego, luz, drenaje y observación.</p><a class="download-link" href="guia-de-plantas.txt" download>Descargar guía ↓</a></div></article>
-   <article class="file-card"><div class="file-icon">📄</div><div><h4>Folleto de polinizadores</h4><p class="resource-note">Qué hacen los polinizadores y cómo protegerlos.</p><a class="download-link" href="folleto-de-polinizadores.txt" download>Descargar folleto ↓</a></div></article>
-  </div>
-  <p class="resource-note">Los enlaces de descarga apuntan a archivos separados. Mantén los archivos junto al HTML y conserva exactamente sus nombres para que funcionen al publicar la página.</p>
- </section>
-</main>
-<footer class="footer"><p><strong>🌺 Nuestro proyecto de plantas: Bugambilias y Lantanas</strong></p><p>Aprender de la naturaleza empieza con observarla y cuidarla.</p><p><a href="#home" id="footer-home">Volver al inicio ↑</a></p></footer>
-<script>
-const home=document.getElementById('home');
-const views=[...document.querySelectorAll('.view')];
-function showView(name){home.classList.toggle('hidden',Boolean(name));views.forEach(v=>{v.classList.toggle('active',v.id==='view-'+name);});if(name){document.getElementById('view-'+name).scrollIntoView({behavior:'smooth',block:'start'});}else{window.scrollTo({top:0,behavior:'smooth'});}}
-document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
-document.querySelectorAll('[data-home]').forEach(b=>b.addEventListener('click',()=>showView('')));
-document.getElementById('footer-home').addEventListener('click',e=>{e.preventDefault();showView('');});
-document.querySelectorAll('input[data-upload]').forEach(input=>input.addEventListener('change',()=>{
- const gallery=document.getElementById('gallery-'+input.dataset.upload);
- [...input.files].forEach(file=>{
-  if(!file.type.startsWith('image/'))return;
-  const url=URL.createObjectURL(file);
-  const figure=document.createElement('figure');figure.className='photo-card';
-  const img=document.createElement('img');img.src=url;img.alt='Fotografía agregada por el usuario: '+file.name;
-  const caption=document.createElement('figcaption');
-  const title=document.createElement('strong');title.contentEditable='true';title.textContent=file.name.replace(/\.[^.]+$/,'');
-  const desc=document.createElement('p');desc.contentEditable='true';desc.textContent='Escribe aquí la descripción de esta fotografía.';
-  caption.append(title,desc);figure.append(img,caption);gallery.appendChild(figure);
- });
- input.value='';
-}));
-</script>
+  <main>
+    <section class="portada" id="inicio">
+      <div>
+        <h1>Jardines Polinizadores</h1>
+        <p>
+          Pequeños espacios, grandes cambios. Descubre cómo las plantas
+          con flores ayudan a atraer polinizadores y contribuyen al cuidado
+          de la biodiversidad.
+        </p>
+        <a class="boton" href="#proceso">Conoce nuestro proyecto</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>¿Qué es un jardín polinizador?</h2>
+      <p class="introduccion">
+        Es un espacio con plantas que ofrecen néctar, polen y refugio a
+        animales como abejas, mariposas y otros polinizadores. Crear uno
+        ayuda a favorecer la biodiversidad y a valorar la importancia de
+        las plantas en nuestro entorno.
+      </p>
+    </section>
+
+    <section class="fondo-lila" id="proceso">
+      <h2>🌱 Preparación del jardín</h2>
+      <p class="introduccion">
+        Conoce las etapas de preparación del terreno para establecer
+        nuestro jardín polinizador. Cada fotografía muestra una parte
+        del trabajo realizado.
+      </p>
+
+      <div class="galeria">
+        <article class="tarjeta">
+          <img src="jar/1.jpg" alt="Primera etapa de preparación del terreno" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 1</span>
+            <h3>Reconocimiento del espacio</h3>
+            <p>Se observa el área disponible para identificar el lugar donde se instalará el jardín y planear su distribución.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="jar/2.jpg" alt="Segunda etapa del trabajo en el terreno" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 2</span>
+            <h3>Limpieza inicial</h3>
+            <p>Se retiran los residuos y los materiales que puedan obstaculizar la preparación del espacio.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="jar/3.jpg" alt="Tercera etapa de preparación de la tierra" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 3</span>
+            <h3>Preparación del suelo</h3>
+            <p>Se trabaja la superficie para facilitar el establecimiento de las plantas y mejorar las condiciones de crecimiento.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="jar/4.jpg" alt="Cuarta etapa de organización del jardín" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 4</span>
+            <h3>Organización del área</h3>
+            <p>Se define dónde colocar las plantas, considerando el espacio disponible y las necesidades de cada especie.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="jar/5.jpg" alt="Quinta etapa de acondicionamiento del jardín" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 5</span>
+            <h3>Acondicionamiento</h3>
+            <p>Se realizan los ajustes necesarios para dejar el terreno preparado antes de colocar las plantas.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="jar/6.jpg" alt="Sexta etapa del proyecto de jardín" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 6</span>
+            <h3>Preparación final</h3>
+            <p>Se revisa el espacio y se completan las tareas pendientes para continuar con la instalación del jardín.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="jar/7.jpg" alt="Séptima etapa del trabajo de jardinería" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 7</span>
+            <h3>Distribución de las plantas</h3>
+            <p>Se planea la ubicación de las plantas para aprovechar el espacio y crear un entorno con flores atractivas para los polinizadores.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="jar/8.jpg" alt="Octava etapa de preparación del jardín polinizador" loading="lazy">
+          <div class="contenido-tarjeta">
+            <span class="numero">Etapa 8</span>
+            <h3>Espacio listo para plantar</h3>
+            <p>Se concluye la preparación del área para avanzar hacia el establecimiento y cuidado de las especies seleccionadas.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="plantas">
+      <h2>🌸 Las plantas de nuestro jardín</h2>
+      <p class="introduccion">
+        La bugambilia y la lantana aportan color al jardín. Sus flores
+        pueden contribuir a atraer distintos visitantes, dependiendo de
+        la especie, la temporada y las condiciones del lugar.
+      </p>
+
+      <div class="galeria">
+        <article class="tarjeta">
+          <img src="jar2/1.jpg" alt="Vista de las plantas del jardín polinizador" loading="lazy">
+          <div class="contenido-tarjeta">
+            <h3>El jardín en conjunto</h3>
+            <p>Esta fotografía muestra las plantas reunidas para formar un espacio lleno de color. La combinación de especies y flores puede ofrecer recursos a los polinizadores durante distintas épocas del año.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="jar2/2.jpg" alt="Planta de bugambilia" loading="lazy">
+          <div class="contenido-tarjeta">
+            <h3>Bugambilia</h3>
+            <p>La bugambilia es una planta ornamental conocida por sus brácteas de colores intensos, como rosa, magenta y morado. Sus pequeñas flores verdaderas se encuentran en el centro de estas estructuras. Aporta color y puede complementar un jardín para polinizadores.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="jar2/3.jpg" alt="Planta de lantana" loading="lazy">
+          <div class="contenido-tarjeta">
+            <h3>Lantana</h3>
+            <p>La lantana produce agrupaciones de pequeñas flores que pueden presentar varios colores. Dependiendo de la especie y de las condiciones locales, sus flores pueden proporcionar néctar a mariposas y otros visitantes florales.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="fondo-lila" id="podcast">
+      <h2>🎧 Podcast: voces del jardín</h2>
+      <p class="introduccion">
+        Escucha nuestros audios para conocer más sobre los jardines
+        polinizadores, las plantas y la importancia de cuidar el ambiente.
+      </p>
+
+      <div class="recursos">
+        <article class="recurso">
+          <div class="icono">🎙️</div>
+          <h3>Podcast 1</h3>
+          <p>Introducción a los jardines polinizadores.</p>
+          <audio controls preload="metadata">
+            <source src="jar/jardin.mp3" type="audio/mpeg">
+            Tu navegador no puede reproducir este audio.
+          </audio>
+
+        </article>
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>🎬 Video del proyecto</h2>
+      <p class="introduccion">
+        Mira el video para conocer más sobre el proceso y las actividades
+        realizadas para crear el jardín polinizador.
+      </p>
+
+      <div class="video-contenedor">
+        <video controls preload="metadata" poster="jar2/1.jpg">
+          <source src="archivos/video.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
+        <p>Video: preparación y desarrollo del jardín polinizador.</p>
+      </div>
+    </section>
+
+    <section class="fondo-lila" id="recursos">
+      <h2>📚 Materiales para descargar</h2>
+      <p class="introduccion">
+        Consulta y descarga documentos complementarios sobre el proyecto.
+      </p>
+
+      <div class="recursos">
+        <article class="recurso">
+          <div class="icono">📄</div>
+          <h3>Documento PDF</h3>
+          <p>Información y actividades del jardín polinizador.</p>
+          <a class="descarga" href="jar/Jardin.pdf" download>
+            Descargar PDF
+          </a>
+        </article>
+
+        <article class="recurso">
+          <div class="icono">🌿</div>
+          <h3>Material complementario</h3>
+          <p>Descarga una ficha informativa sobre las plantas del jardín.</p>
+          <a class="descarga" href="archivos/plantas.pdf" download>
+            Descargar ficha
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>💜 Cuidemos a los polinizadores</h2>
+      <p class="introduccion">
+        Plantar especies adecuadas para nuestra región, cuidar las flores,
+        evitar el uso innecesario de pesticidas y mantener espacios verdes
+        saludables son acciones que ayudan a proteger la biodiversidad.
+        Cada jardín puede convertirse en una oportunidad para aprender y
+        contribuir al cuidado de la naturaleza.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Jardines Polinizadores</strong></p>
+    <p>Un espacio para aprender, florecer y cuidar la biodiversidad. 🌺</p>
+  </footer>
+
 </body>
 </html>
